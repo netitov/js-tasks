@@ -1,2 +1,2 @@
 # js-tasks
-wb-l1
+WB-L1
