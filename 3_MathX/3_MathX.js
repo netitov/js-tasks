@@ -11,11 +11,11 @@ const MathX = {
   nthFibonacci(n) {
 
     if (n < 1) {
-      return 'Число не может быть меньше 1';
+      return new Error('Число не может быть меньше 1');
     }
 
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
     }
 
     //вычисление ряда Фибоначчи длины n
@@ -29,14 +29,15 @@ const MathX = {
   fibonacci(n) {
 
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
+
     }
 
     //первые 3 числа в ряду
     const fibonacciArr = [0, 1, 1];
 
     if (n < 0) {
-      return 'Число не может быть меньше 0';
+      return new Error('Число не может быть меньше 0');
     }
 
     if (n === 0) {
@@ -56,14 +57,14 @@ const MathX = {
   fibonacciLength(n) {
 
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
     }
 
     //первые 3 числа в ряду
     const fibonacciArr = [0, 1, 1];
 
     if (n < 1) {
-      return 'Длина ряда не может быть меньше 1';
+      return new Error('Длина ряда не может быть меньше 1');
     }
 
     if (n < fibonacciArr.length) {
@@ -83,7 +84,7 @@ const MathX = {
   isPrime(n) {
 
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
     }
 
     // возвращаем false, т.к. 2 первое простое число
@@ -105,11 +106,11 @@ const MathX = {
   //вычисление N-го просто числа
   nthPrime(n) {
     if (n < 1) {
-      return 'Число не может быть меньше 1';
+      return new Error('Число не может быть меньше 1');
     }
 
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
     }
 
     //вычисление ряда Фибоначчи длины n
@@ -123,11 +124,11 @@ const MathX = {
   primesUpTo(n) {
 
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
     }
 
     if (n < 2) {
-      return 'Простые числа начинаются с 2';
+      return new Error('Простые числа начинаются с 2');
     }
 
     const primes = [];
@@ -147,7 +148,7 @@ const MathX = {
   //вычисление массива простых чисел длины n
   primesLength(n) {
     if (typeof n !== 'number') {
-      return 'Аргумент должен быть числом';
+      return new Error('Аргумент должен быть числом');
     }
 
     let primesArr = [];
