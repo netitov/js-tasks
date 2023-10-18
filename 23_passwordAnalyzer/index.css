@@ -1,0 +1,92 @@
+body {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.page {
+  font-family: 'Noto Sans Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page__heading {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+.page__input {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 5px #80808091;
+  outline: none;
+  background-color: white;
+  padding: 3px 7px;
+  font-family: 'Noto Sans Display', sans-serif;
+}
+
+.page__check {
+  margin-bottom: 7px;
+  font-size: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page__check:last-of-type {
+  margin-bottom: 0;
+}
+
+.page__check_checked {
+  opacity: 0.2;
+  list-style-type: none;
+}
+
+.page__check_checked::before {
+  content: "\2713";
+  display: inline-block;
+  margin: 0px -3px 0 0;
+  margin-left: -17px;
+  width: 20px;
+  font-size: 12px;
+}
+
+.page__progress-box {
+  margin: 25px 0 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.page__progress {
+  width: 100%;
+  height: 7px;
+  background: #f6f6f6;
+  border-radius: 10px;
+  position: relative;
+}
+
+.page__progress-done {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+}
+
+.page__progress-value {
+  font-size: 14px;
+  margin-bottom: 3px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+

@@ -1,0 +1,43 @@
+body {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.page {
+  font-family: 'Noto Sans Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page__container {
+  width: 300px;
+  height: 200px;
+  background: #dcdbda;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  transition: transform 1s ease;
+  transform: translateY(0%);
+}
+
+._floated {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+@keyframes float {
+	0% {
+		transform: translateY(0%);
+	}
+	50% {
+		transform: translateY(-50%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}

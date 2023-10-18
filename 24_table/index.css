@@ -1,0 +1,157 @@
+body {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.page {
+  font-family: 'Noto Sans Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page__table-wrapper {
+  margin: 50px 0 60px;
+  padding: 15px;
+  box-shadow: 0px 0px 4px #2929291c;
+  border-radius: 10px;
+
+}
+
+.table {
+  font-size: 14px;
+  border-spacing: 0;
+  table-layout: fixed;
+
+  width: 100%;
+  max-width: 850px;
+  min-width: 500px;
+}
+
+.table__row {
+
+}
+
+.table__head-row {
+  position: sticky;
+  top: -1px;
+  background-color: #fff;
+  box-shadow: 0px 3px 2px -1px #80808036;
+}
+
+.table__row:nth-last-of-type(odd) {
+  background-color: #f1f0ee;
+}
+
+.table__header {
+  font-weight: 400;
+  text-align: start;
+  padding: 5px 15px;
+  transition: all 0.3s;
+}
+
+.table__header:hover:not(.table__header_number) {
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+.asc::after {
+  content: '🠇';
+  margin-left: 2px;
+  color: #6a6a6a;
+}
+
+.desc::after {
+  content: '🠅';
+  margin-left: 2px;
+  color: #6a6a6a;
+}
+
+.table__header:first-of-type {
+  width: 20px;
+}
+
+.table__header:nth-of-type(7) {
+  width: 30px;
+}
+
+.table__header:nth-of-type(8) {
+  width: 40px;
+}
+
+.table__data {
+  text-align: start;
+  padding: 5px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.paginator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.paginator__btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  padding: 5px;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.paginator__btn:hover:not(.paginator__btn_inactive) {
+  background-color: #f1f0ee;
+  cursor: pointer;
+}
+
+.paginator__btn_inactive {
+  opacity: 0.3;
+}
+
+.paginator__btn-prev {
+  margin-right: 7px;
+}
+
+.paginator__btn-next {
+  margin-left: 7px;
+}
+
+.paginator__btn > svg {
+  display: block;
+}
+
+.paginator__number {
+  border: 1px solid #80808063;
+  border-radius: 3px;
+  width: 17px;
+  padding: 3px 4px;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Noto Sans Display', sans-serif;
+  margin-right: 4px;
+  text-align: center;
+}
+
+.page__pagiantor-length {
+  font-size: 14px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

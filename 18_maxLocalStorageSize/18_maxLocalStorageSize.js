@@ -3,54 +3,39 @@
 
 const valueElement = document.querySelector('.page__value');
 
-function getMaxLocalStorageSize(testData) {
-  //браузерный лимит для localStorage - до 10мб
-  const browserLimitMB = 10;
-  const browserLimitBytes = browserLimitMB * 1024 * 1024;
+function getMaxLocalStorageSize() {
 
-  let totalDataSizeBytes = 0;
-  let iteration = 0;
+  //размер текущих данных
+  const initialSize = JSON.stringify(localStorage).length;
 
-  //запускаем цикл записанный объем данных не привышает ограничение
-  while (totalDataSizeBytes <= browserLimitBytes) {
-    //генерируем уникальный ключ для каждой итерации
-    const testKey = `testData_${iteration}`;
-    const jsonData = JSON.stringify(testData);
+  //создаем строку из 1024 символов 'a'
+  const testData = 'a'.repeat(2024);
+  let totalSize = initialSize;
 
-    try {
-      //записать данные в localStorage
-      localStorage.setItem(testKey, jsonData);
-      //обновляем текущий размер записанных данных
-      totalDataSizeBytes += jsonData.length;
-      iteration++;
-    } catch {
-      //если превышен лимит localStorage, выходим из цикла
-      break;
+  try {
+    while (true) {
+      const key = `testKey_${totalSize}`;
+      localStorage.setItem(key, testData);
+      totalSize += testData.length;
+    }
+  } catch (e) {
+
+    //очищаем тестовые данные из localStorage
+    for (let i = initialSize; i < totalSize; i += testData.length) {
+      const key = `testKey_${i}`;
+      localStorage.removeItem(key);
     }
   }
 
-  //очищаем localStorage
-  localStorage.clear();
-
-  //переводим размер данных в KB
-  const totalDataSizeKB = totalDataSizeBytes / 1024;
-
-  return totalDataSizeKB;
+  return totalSize;  //возвращаем максимальный размер localStorage в байтах
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const testData = {
-    product: 'Test product',
-    amount: 3,
-    porperties: [1, 2, 3, 4, 5],
-    price: [1, 2, 3, 4, 5, 6, 7, 8],
-    colors: ['black', 'white'],
-  };
 
-  const maxLocalStorageUsageKB = Math.round(getMaxLocalStorageSize(testData));
+  const maxLocalStorageSize = Math.floor(getMaxLocalStorageSize() / 1024);
 
-  valueElement.textContent = maxLocalStorageUsageKB + ' KB';
-  console.log(`Максимальный объем localStorage: ${maxLocalStorageUsageKB} KB`);
+  valueElement.textContent = maxLocalStorageSize + ' KB';
+  console.log('Максимальный размер localStorage:', maxLocalStorageSize);
 });
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Оценка пароля</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="page__container">
+
+        <input type="password" class="page__input" placeholder="Введите пароль">
+        <div class="page__progress-box">
+          <span class="page__progress-value">Слабый</span>
+          <div class="page__progress">
+            <div class="page__progress-done"></div>
+          </div>
+        </div>
+
+
+        <ul class="page__checks">
+          <li class="page__check">Минимум 8 символов</li>
+          <li class="page__check">Строчные латинские буквы</li>
+          <li class="page__check">Заглавные латинские буквы</li>
+          <li class="page__check">Цифры</li>
+          <li class="page__check">Специальные символы !@$%^&*()_-+</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <script src="26_loopingDOM.js"></script>
+  </body>
+</html>

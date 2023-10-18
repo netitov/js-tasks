@@ -1,0 +1,25 @@
+body {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.page {
+  font-family: 'Noto Sans Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page__container {
+  width: 300px;
+  height: 200px;
+  background: #dcdbda;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+

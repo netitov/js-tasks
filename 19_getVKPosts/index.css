@@ -1,0 +1,277 @@
+body {
+  overflow-y: scroll;
+}
+
+.page {
+  font-family: 'Noto Sans Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.page__heading {
+  font-weight: 300;
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+
+.page__input-box {
+  position: relative;
+  width: 98%;
+  max-width: 450px;
+}
+
+.page__input {
+  border: none;
+  background-color: #efefef;
+  height: 34px;
+  border-radius: 10px;
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 17px;
+  padding: 2px 7px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page__form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__spinner {
+  border: 2px solid transparent;
+  border-top: 3px solid #ffe938;
+  border-right: 3px solid #ffe938;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  margin: 0 0 0 7px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.page__spinner_active {
+  visibility: visible;
+  opacity: 1;
+  animation: spin 0.8s linear infinite;
+}
+
+
+.page__search-btn {
+  display: block;
+  border: none;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  border-radius: 10px;
+  background-color: #d8d2a5;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.page__search-btn:hover {
+  background-color: #d8d2a57d;
+}
+
+.page__search-btn > span {
+  display: block;
+  padding: 0;
+  background-image: url('./images/search.svg');
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+.page__posts {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.post {
+  margin-bottom: 15px;
+  width: 98%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.post__img {
+  max-height: 450px;
+  object-fit: contain;
+  max-width: 600px;
+}
+
+.post__img-box {
+  /* width: 90%; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeded;
+  border-radius: 10px;
+}
+
+.post__date {
+  color: #b1b1b1;
+  font-size: 14px;
+  align-self: flex-start;
+}
+
+.post__like-icon {
+  background-image: url('./images/like.svg');
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+}
+
+.post__repost-icon {
+  background-image: url('./images/repost.svg');
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.post__comment-icon {
+  background-image: url('./images/comment.svg');
+  display: block;
+  width: 19px;
+  height: 19px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.post__view-icon {
+  background-image: url('./images/view.svg');
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+.post__bottom-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.post__actions-box {
+  display: flex;
+  gap: 15px;
+}
+
+.post__action-element {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #d8d2a557;
+  padding: 3px 7px;
+  border-radius: 15px;
+}
+
+.post__view-box {
+  display: flex;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.post__text {
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.group__title {
+  font-size: 1.1em;
+}
+
+.group__img {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  visibility: hidden;
+}
+
+.error_active {
+  visibility: visible;
+}
+
+.error-box {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  width: 232px;
+  background: #ff7050;
+  height: 34px;
+  padding: 2px 7px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  left: auto;
+}
+
+.error__close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error__close-btn > svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  display: block;
+}
+
+.error__text {
+  color: #fff;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

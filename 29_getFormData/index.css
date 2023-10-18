@@ -1,0 +1,141 @@
+body {
+  overflow-y: scroll;
+  margin: 0;
+}
+
+.page {
+  font-family: 'Noto Sans Display', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.page__container {
+  width: 300px;
+  height: 200px;
+  background: #dcdbda;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user {
+  margin-bottom: 0;
+}
+
+.user__input-container {
+  position: relative;
+  width: 300px;
+  margin-bottom: 35px;
+}
+
+.user__input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  padding-bottom: 2px;
+}
+
+.user__input_error {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+.user__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user__input:focus ~ .user__label, .user__label_filled {
+  transform: translateY(-18px);
+  font-size: 13px;
+  line-height: 16px;
+}
+
+
+.user__sbt-btn {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-family: 'Noto Sans Display', sans-serif;
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: #0000008f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup_active {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup__box {
+  width: 350px;
+  height: 245px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  position: relative;
+}
+
+.popup__box > h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.popup__close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: -32px;
+  top: -27px;
+}
+
+.popup__close-btn > svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  display: block;
+}
+
+.popup__field-value {
+  font-weight: 600;
+}
+
+.popup__data-saved {
+  margin-bottom: 10px;
+}
+
+

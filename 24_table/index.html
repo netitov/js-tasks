@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Таблица</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="page__table-wrapper">
+        <table class="page__table table">
+
+          <thead>
+            <tr class="table__head-row">
+              <th class="table__header table__header_number">#</th>
+              <th class="table__header">fname</th>
+              <th class="table__header">lname</th>
+              <th class="table__header">tel</th>
+              <th class="table__header">address</th>
+              <th class="table__header">city</th>
+              <th class="table__header">state</th>
+              <th class="table__header">zip</th>
+            </tr>
+          </thead>
+
+          <tbody class="table__body">
+            <template id="table-row">
+              <tr class="table__row">
+                <td class="table__data table__data-number"></td>
+                <td class="table__data table__data-fname"></td>
+                <td class="table__data table__data-lname"></td>
+                <td class="table__data table__data-tel"></td>
+                <td class="table__data table__data-address"></td>
+                <td class="table__data table__data-city"></td>
+                <td class="table__data table__data-state"></td>
+                <td class="table__data table__data-zip"></td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+
+        <div class="page__pagiantor paginator">
+          <button type="button" class="paginator__btn paginator__btn-prev paginator__btn_inactive">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+
+          <input type="number" class="paginator__number" value="1">
+          <span class="page__pagiantor-length"></span>
+
+          <button type="button" class="paginator__btn paginator__btn-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="24_table.js"></script>
+  </body>
+</html>

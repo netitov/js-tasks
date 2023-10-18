@@ -1,0 +1,22 @@
+body {
+  overflow-y: scroll;
+}
+
+.page {
+  font-family: 'Century Gothic', arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.page__heading {
+  font-weight: 300;
+  font-size: 1.5em;
+}
+
+span {
+  font-size: 1.6em;
+}
+
