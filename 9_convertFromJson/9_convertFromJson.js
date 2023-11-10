@@ -29,6 +29,7 @@ function parseJson(jsonString) {
     return jsonString.slice(1, jsonString.length - 1);
   }
 
+  return null;
 }
 
 function parseObject(jsonString) {
@@ -63,7 +64,7 @@ function parseArray(jsonString) {
   return array;
 }
 
-const json = `{"product":"test","amount":3}`
+const json = `{"product":"test","amount":3}`;
 
 const result = parseJson(json);
 console.log(result); // -> { product: 'test', amount: 3 }

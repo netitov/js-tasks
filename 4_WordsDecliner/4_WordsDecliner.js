@@ -9,7 +9,7 @@
 //Функцию надо упаковать в модуль.
 
 
-const WordsDecliner = {
+export const WordsDecliner = {
 
   declineWithNumerals(n, forms) {
 
@@ -55,5 +55,3 @@ console.log(WordsDecliner.declineWithNumerals(1, ['пользователь', '�
 console.log(WordsDecliner.declineWithNumerals(1022, ['пользователь', 'пользователя', 'пользователей'])); // -> пользователя
 console.log(WordsDecliner.declineWithNumerals('23', ['пользователь', 'пользователя', 'пользователей'])); // -> ошибка
 console.log(WordsDecliner.declineWithNumerals(1225, ['пользователь', 'пользователя'])); // -> ошибка
-
-module.exports = WordsDecliner;

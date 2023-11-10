@@ -29,7 +29,7 @@ function isWeirdNumber(number) {
 }
 
 console.log(isWeirdNumber(70)); // -> true
-console.log(isWeirdNumber(12)); // -> false
+console.log(isWeirdNumber(15)); // -> false
 console.log(isWeirdNumber(836)); // -> true
 console.log(isWeirdNumber('number')); // -> false
 console.log(isWeirdNumber(null)); // -> false

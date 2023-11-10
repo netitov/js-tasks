@@ -37,7 +37,7 @@ function jsonToLinkedList(json) {
     if (Array.isArray(jsonData)) {
       jsonData.forEach(item => {
         addToTail(linkedList, item);
-    });
+      });
     } else {
       addToTail(linkedList, jsonData);
     }

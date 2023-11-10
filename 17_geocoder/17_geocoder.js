@@ -111,7 +111,6 @@ function throttle(func, delay) {
     } else {
       //иначе отменяем предыдущий таймаут
       clearTimeout(timeoutId);
-
       //устанавливаем новый таймаут для вызова функции
       timeoutId = setTimeout(() => {
         func(...args);
@@ -122,7 +121,7 @@ function throttle(func, delay) {
 }
 
 
-const renderAddressesThrottled = throttle(renderAddresses, 300);
+const renderAddressesThrottled = throttle(renderAddresses, 100);
 
 //обработка изменения адреса
 inputElement.addEventListener('input', (e) => {
@@ -133,5 +132,5 @@ inputElement.addEventListener('input', (e) => {
   //сбрасываем таймер, чтобы предотвратить предыдущий запланированный вызов
   clearTimeout(timeoutId);
   //устанавливаем новый таймер
-  timeoutId = setTimeout(() => renderAddressesThrottled(e.target.value), 500);
+  timeoutId = setTimeout(() => renderAddressesThrottled(e.target.value), 300);
 });

@@ -8,8 +8,8 @@ function getMaxLocalStorageSize() {
   //размер текущих данных
   const initialSize = JSON.stringify(localStorage).length;
 
-  //создаем строку из 1024 символов 'a'
-  const testData = 'a'.repeat(2024);
+  //создаем строку из символов 'a'
+  const testData = 'a'.repeat(1024);
   let totalSize = initialSize;
 
   try {
@@ -27,7 +27,7 @@ function getMaxLocalStorageSize() {
     }
   }
 
-  return totalSize;  //возвращаем максимальный размер localStorage в байтах
+  return totalSize;  //возвращаем максимальный размер localStorage
 }
 
 

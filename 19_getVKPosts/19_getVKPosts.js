@@ -286,7 +286,6 @@ let dataIsLoading = false;
 function updatePosts() {
 
   const lastPost = document.querySelector('.post:last-child');
-
   if (!dataIsLoading && lastPost.scrollHeight + window.scrollY  >  lastPost.offsetTop) {
     dataIsLoading = true;
 
@@ -326,7 +325,7 @@ formElement.addEventListener('submit', async (e) => {
     } else {
       const postElement = document.querySelectorAll('.post');
 
-      //удаляем посты по предыдущей группе со страницы и храниоища
+      //удаляем посты по предыдущей группе со страницы и хранилища
       Array.from(postElement).forEach((i) => {
         i.remove();
       })

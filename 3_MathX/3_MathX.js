@@ -5,7 +5,7 @@
 //вычисление всех простых чисел до числа N
 
 
-const MathX = {
+export const MathX = {
 
   //вычисление N-го числа в ряду Фибоначчи
   nthFibonacci(n) {

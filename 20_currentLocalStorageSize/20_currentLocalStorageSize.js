@@ -12,7 +12,7 @@ function getLocalStorageSize() {
   const initialSize = JSON.stringify(localStorage).length;
 
   //создаем строку из 1024 символов 'a'
-  const testData = 'a'.repeat(2024);
+  const testData = 'a'.repeat(1024);
   let totalSize = initialSize;
 
   try {
